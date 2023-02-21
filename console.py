@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             "create a class instance"
-        new_instance = HBNBCommand.classes[class_name]()
+        new_instance = HBNBCommand.classes[cls_name]()
         """check for any parameters provided"""
         if len(args.split('')) > 1:
             """get the new parameters from string and do conversions"""
