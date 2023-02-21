@@ -128,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
         """check for any parameters provided"""
         if len(args.split(' ')) > 1:
             """get the new parameters from string and do conversions"""
-            params = args.split('')[1:]
+            params = args.split(' ')[1:]
             for param in params:
                 key, value = param.split('=')
                 """try the conversion of value"""
