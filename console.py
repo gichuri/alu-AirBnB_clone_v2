@@ -141,12 +141,12 @@ class HBNBCommand(cmd.Cmd):
                     if type(value) == str and '_' in value:
                         value = value.replace('_', ' ')
 
-                        setattr(new_instance, key, value)
-                    storage.save()
-                    print(new_instance.id)
-                    return
-        storage.save()
-        print(new_instance.id)
+                    setattr(new_instance, key, value)
+                storage.save()
+                print(new_instance.id)
+                return
+            storage.save()
+            print(new_instance.id)
     def help_create(self):
         """ Help information for the create method """
         print("Creates a class of any type")
