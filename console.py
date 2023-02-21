@@ -138,7 +138,7 @@ class HBNBCommand(cmd.Cmd):
                     pass
                 """ modify the string value in the str param"""
                 """ check if value is str and has _"""
-                if type(value) is str and '_' in value:
+                if type(value) == str and '_' in value:
                     value = value.replace('_', ' ')
 
                     setattr(new, key, value)
