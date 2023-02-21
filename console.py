@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
             "create a class instance"
         new_instance = HBNBCommand.classes[cls_name]()
         """check for any parameters provided"""
-        if len(args.split('')) > 1:
+        if len(args.split(' ')) > 1:
             """get the new parameters from string and do conversions"""
             params = args.split('')[1:]
             for param in params:
