@@ -114,38 +114,36 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        # split the args to get the class name
+        """ first split the args to get cls_name"""
         class_name = args.split(' ')[0]
-        # Validate if the class name is provided and if it exists
+        """check whether class_name exists"""
         if not class_name:
             print("** class name missing **")
         elif class_name not in HBNBCommand.classes.keys():
             print("** class doesn't exist **")
         else:
-            # create an instance of the class
+            """create new class instance"""
             new_model = HBNBCommand.classes[class_name]()
-            # if there are parameters provided, set the attributes
+            """ Check for any parameters provided"""
             if len(args.split(' ')) > 1:
-                # get the parameters from the string
+                """get the new parameters from str and convert"""
                 params = args.split(' ')[1:]
                 for param in params:
-                    # split the param to get the key and value
                     key, value = param.split('=')
-                    # if value is convertable to another type, convert it
-                    # convertable types are int, float, bool
+                    """Try the conversion of value"""
                     try:
                         value = eval(value)
                     except Exception as e:
                         pass
-                    # if value is a string and it contains underscore(_)
-                    # replace the underscore with space
+                    """check if value has underscore (_)"""
+                    """modify the str value in param"""
                     if type(value) is str and '_' in value:
                         value = value.replace('_', ' ')
                     setattr(new_model, key, value)
-                new_model.save()
+                storage.save()
                 print(new_model.id)
                 return
-            new_model.save()
+            storage.save()
             print(new_model.id)
     def help_create(self):
         """ Help information for the create method """
