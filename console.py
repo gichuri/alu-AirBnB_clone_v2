@@ -134,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
                 """try the conversion of value"""
                 try:
                     value = eval(value)
-                except exception as e: 
+                except Exception as e:
                     pass
                 """ modify the string value in the str param"""
                 """ check if value is str and has _"""
