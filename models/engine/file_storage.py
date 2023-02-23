@@ -55,9 +55,5 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
+        """deletes an instance from self.__objects"""
         pass
-    """deletes an instance from self.__objects"""
-    #     if obj in self.__objects:
-    #         del obj
-    #     else:
-    #         return
