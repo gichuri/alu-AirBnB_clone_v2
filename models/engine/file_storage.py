@@ -10,10 +10,10 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a specific class of objs"""
-        for obj in self.__objects:
-            class_name = obj.keys.split('.')[0]
+        for key, value in self.__objects:
+            class_name = key.split('.')[0]
             if cls == class_name:
-                return obj
+                return value
             else:
                 return FileStorage.__objects
 
