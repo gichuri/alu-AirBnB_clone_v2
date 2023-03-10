@@ -25,5 +25,4 @@ sudo chown -R ubuntu:ubuntu /data/
 # serve content hbnb_static using alias
 sed -ri "55i location /hbnb_static/ {\nalias /data/web_static/current/;\n}\n" /etc/nginx/sites-available/default
 # restart nginx 
-sed -ri "55i location /hbnb_static/ {\nalias /data/web_static/current/;\n}\n" /etc/nginx/sites-available/default
-
+sudo service nginx restart
