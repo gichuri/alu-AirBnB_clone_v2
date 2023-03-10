@@ -39,7 +39,7 @@ def do_deploy(archive_path):
         run("rm -rf /data/web_static/current")
 
         # Create a new the symbolic link /data/web_static/current on
-    
+
         run("ln -s {} /data/web_static/current".format(folder))
         return True
     except Exception:
