@@ -16,7 +16,7 @@ echo "<html><head></head><body>Hello, World!</body></html>" | sudo tee /data/web
 
 # remove symbolic link between 2 folders 
 sudo rm /data/web_static/current
-# create a fsymbolic link between 2 folders 
+# create a symbolic link between 2 folders 
 sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 # give ownership to ubuntu user and group 
 
