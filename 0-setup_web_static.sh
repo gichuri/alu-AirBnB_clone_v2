@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# set up servers for the deployment of web_static
 
 # Install Nginx if it not already installed
 
