@@ -14,10 +14,9 @@ sudo mkdir -p /data/web_static/shared/
 #Create a fake HTML file to test nginx
 echo "<html><head></head><body>Hello, World!</body></html>" | sudo tee /data/web_static/releases/test/index.html
 
-# create a symbolic link between 2 folders 
-
-sudo ln -s /data/web_static/releases/test/ /data/web_static/current
-
+# create a symbolic link between 2 folders
+# if symbolic link exists,it should be deleted first
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 # give ownership to ubuntu user and group 
 
 sudo chown -R ubuntu:ubuntu /data/
