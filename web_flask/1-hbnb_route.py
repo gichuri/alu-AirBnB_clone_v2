@@ -1,23 +1,31 @@
 #!/usr/bin/python3
 
 """
- script that starts a Flask web application:
- Your web application must be listening on 0.0.0.0, port 5000
-Routes:
-/: display “Hello HBNB!”
-/hbnb: display “HBNB”
-You must use the option strict_slashes=False in your route definition
-"""
+Flask Web Application
 
+This script creates a Flask web application that listens on 0.0.0.0, port 5000.
+It defines a single route for the homepage that displays the message "Hello HBNB!".
+
+Usage:
+    Run this script to start the Flask application:
+        python3 <filename>.py
+
+Routes:
+    /:
+        Displays the message "Hello HBNB!"
+
+Options:
+    - strict_slashes=False:
+        Ensures that trailing slashes are ignored in the route URL.
+
+"""
 
 from flask import Flask
 
-# create a new Flask web application
+#create a new Flask web application
 app = Flask(__name__)
 
-# define a route for the homepage
-
-
+#define a route for the homepage
 @app.route('/', strict_slashes=False)
 def home():
     """
@@ -27,8 +35,7 @@ def home():
         A string with the message "Hello HBNB!".
     """
     return "Hello HBNB!"
-
-# define a route for /hbnb
+# define route for /hbnb
 
 @app.route('/hbnb' strict_slashes=False)
 def hbnb():
