@@ -28,6 +28,8 @@ def home():
     """
     return "Hello HBNB!"
 
+# define a route for /hbnb
+
 @app.route('/hbnb' strict_slashes=False)
 def hbnb():
     """
