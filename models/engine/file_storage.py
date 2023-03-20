@@ -10,14 +10,10 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a specific class of objs"""
-        for key, value in self.__objects:
-            class_name = key.split('.')[0]
-            if cls == class_name:
-                return value
-            else:
-                return FileStorage.__objects
+        if cls:
+            else:                return FileStorage.__objects
 
-    def new(self, obj):
+   def new(self, obj):
         """Adds new object to storage dictionary"""
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
 
