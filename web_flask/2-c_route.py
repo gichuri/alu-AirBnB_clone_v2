@@ -54,7 +54,7 @@ def c(text):
     Returns:
         A string with the message C + value of text
     """
-    return "C" + text.replace('_', ' ')
+    return "C " + text.replace('_', ' ')
 
 # start the application on port 5000 and host 0.0.0.0
 if __name__ == "__main__":
