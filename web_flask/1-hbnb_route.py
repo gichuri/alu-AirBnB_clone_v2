@@ -1,24 +1,14 @@
 #!/usr/bin/python3
 
 """
-Flask Web Application
-
-This script creates a Flask web application that listens on 0.0.0.0, port 5000.
-defines a route for the homepage; displays the message "Hello HBNB!".
-
-Usage:
-    Run this script to start the Flask application:
-        python3 <filename>.py
-
+ script that starts a Flask web application:
+ Your web application must be listening on 0.0.0.0, port 5000
 Routes:
-    /:
-        Displays the message "Hello HBNB!"
-
-Options:
-    - strict_slashes=False:
-        Ensures that trailing slashes are ignored in the route URL.
-
+/: display “Hello HBNB!”
+/hbnb: display “HBNB”
+You must use the option strict_slashes=False in your route definition
 """
+
 
 from flask import Flask
 
