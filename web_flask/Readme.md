@@ -1,1 +1,1 @@
-This repository consists of flask framework codes
+flask framework codes
