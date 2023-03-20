@@ -1,63 +1,41 @@
 #!/usr/bin/python3
 """
-Flask Web Application
-
-This script creates a Flask web application that listens on 0.0.0.0, port 5000.
-defines a single route for the homepage; displays the message "Hello HBNB!".
-
-Usage:
-    Run this script to start the Flask application:
-        python3 <filename>.py
-
+Write a script that starts a Flask web application:
+Your web application must be listening on 0.0.0.0, port 5000
 Routes:
-    /:
-        Displays the message "Hello HBNB!"
-
-Options:
-    - strict_slashes=False:
-        Ensures that trailing slashes are ignored in the route URL.
-
+/: display “Hello HBNB!”
+/hbnb: display “HBNB”
+/c/<text>: display “C ” followed by the value of the text variable (replace
+underscore _ symbols with a space )
+/python/(<text>): display “Python ”, followed by the value of the text
+variable (replace underscore _ symbols with a space )
+    * The default value of text is “is cool”
+You must use the option strict_slashes=False in your route definition
 """
 
 from flask import Flask
 app = Flask(__name__)
 
 
-# define a route for the homepage
 @app.route('/', strict_slashes=False)
-def home():
-    """
-    Displays a message on the homepage.
-
-    Returns:
-        A string with the message "Hello HBNB!".
+def hello_hbnb():
+    """display “Hello HBNB!”
     """
     return "Hello HBNB!"
-# define route for /hbnb
 
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """
-    Defines a route for /hbnb
-
-    Returns:
-        A string with the message "HBNB"
+    """display “HBNB”
     """
     return "HBNB"
-# define route for c
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c(text):
-    """
-    Defines a route for /c
+def c_text(text):
+    """display “C ” followed by the value of the text variable"""
+    return "C {}".format(text.replace('_', ' '))
 
-    Returns:
-        A string with the message C + value of text
-    """
-    return "C " + text.replace('_', ' ')
-# define route for /python/(<text>)
 @app.route('/python/<text>', strict_slashes=False)
 def python(text="is cool"):
     """
