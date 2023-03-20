@@ -60,8 +60,8 @@ def c(text):
 # define route for /python/(<text>)
 
 
-@app.route('/python/(<text>)')
-def python(text):
+@app.route('/python/(<text>), strict_slashes=False')
+def python((text)):
     """
     Defines a route for /python/(<text>)
 
