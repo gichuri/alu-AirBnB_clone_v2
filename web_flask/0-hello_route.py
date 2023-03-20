@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# create a new web application and configure ports
+
 from flask import Flask
 app = Flask(__name__)
 
