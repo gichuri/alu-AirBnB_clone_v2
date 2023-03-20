@@ -4,7 +4,7 @@
 Flask Web Application
 
 This script creates a Flask web application that listens on 0.0.0.0, port 5000.
-It defines a single route for the homepage that displays the message "Hello HBNB!".
+defines a route for the homepage; displays the message "Hello HBNB!".
 
 Usage:
     Run this script to start the Flask application:
