@@ -1,1 +1,0 @@
-print(__import__("module").__doc__)
