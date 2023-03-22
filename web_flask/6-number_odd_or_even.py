@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""
-display a HTML page only if n is an integer:
-H1 tag: “Number: n is even|odd” inside the tag BODY
-"""
+
+""" 
+add a route for /number_odd_or_even/<n>, 
+and display a HTML page only if n is an integer
+""" 
 
 from flask import Flask, render_template
 app = Flask(__name__)
