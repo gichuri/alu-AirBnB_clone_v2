@@ -11,8 +11,13 @@ class FileStorage:
     def all(self, cls=None):
         """Returns a specific class of objs"""
         if cls:
-            else:                return FileStorage.__objects
-
+            return FileStorage.__objects
+        else:
+            cls_obj ={}
+            for k,v in self.__objects.items():
+                if type(v) == cls:
+                    cls_obj[k] = v
+            return cls_obj
    def new(self, obj):
         """Adds new object to storage dictionary"""
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
@@ -53,3 +58,6 @@ class FileStorage:
     def delete(self, obj=None):
         """deletes an instance from self.__objects"""
         pass
+    def close(self):
+        """calls the reload function"""
+        self.reload()
