@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" script that starts a Flask web application: Your web application must
+"""
+Write a script that starts a Flask web application: Your web application must
 be listening on 0.0.0.0,
 port 5000.
 You must use storage for fetching data from the storage engine (FileStorage or
@@ -8,6 +9,12 @@ import storage and storage.all(...)
 After each request you must remove the current SQLAlchemy Session:
     - Declare a method to handle @app.teardown_appcontext
     - Call in this method storage.close()
+Routes:
+/states_list: display a HTML page: (inside the tag BODY)
+    - H1 tag: “States”
+    - UL tag: with the list of all State objects present in DBStorage sorted
+      by name (A->Z) tip
+        - LI tag: description of one State: <state.id>: <B><state.name></B>
 strict_slashes=False in your route definition
 """
 
@@ -18,11 +25,11 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.route('/cities_by_states', strict_slashes=False)
-def cities():
+@app.route('/states_list', strict_slashes=False)
+def states_list():
     """display a HTML page”
     """
-    return render_template('8-cities_by_states.html',
+    return render_template('7-states_list.html',
                            states=storage.all('State').values())
 
 
@@ -33,4 +40,4 @@ def teardown(self):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True
