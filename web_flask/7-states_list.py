@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 """
-Write a script that starts a Flask web application:
-lists states in app
-"""
+write a script that starts a web flask application
+fetch states from model.storage and 
+renders them to a web_page
+""" 
 
 from flask import Flask, render_template
 from models import storage
